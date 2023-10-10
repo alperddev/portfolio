@@ -23,7 +23,7 @@ function Blob1() {
 
   return (
     <motion.div
-      className=" absolute  -z-20 rounded-full bg-purple blur-[30px]"
+      className=" absolute  -z-20 rounded-full bg-purple/50 blur-[30px]"
       style={{
         scale,
         width: 100,
@@ -54,7 +54,7 @@ function Blob2() {
   }, [scrollYProgress]);
   return (
     <motion.div
-      className="left  absolute  -z-20  rounded-full   bg-yellow blur-[20px] "
+      className="left  absolute  -z-20  rounded-full   bg-yellow/50 blur-[20px] "
       style={{
         scale,
         width: 100,
@@ -87,7 +87,7 @@ function Blob3() {
 
   return (
     <motion.div
-      className="left absolute  -z-20  rounded-full   bg-greenish blur-[30px] "
+      className="left absolute  -z-20  rounded-full   bg-greenish/50 blur-[30px] "
       style={{
         scale,
         width: 100,
@@ -106,100 +106,102 @@ function Blob3() {
 export default function Home() {
   return (
     <>
-    
       <Blob1 />
       <Blob2 />
       <Blob3 />
       <Navbar />
 
-      <main className="scroll-smooth" >
-      <section id="one" className="">
-        <div className=" items-center  justify-center  pt-12 md:flex   md:pt-36">
-          <div className="z-10 order-1 flex justify-center  p-10  drop-shadow-2xl md:order-2 ">
-            <Image
-              src="/profilep.png"
-              alt="Profile Picture"
-              className="rounded-full  "
-              width={250}
-              height={250}
-              priority
-            />
-          </div>
+      <main className="scroll-smooth">
+        <section id="one" className="">
+          <div className=" items-center  justify-center  pt-32  md:flex   md:pt-36">
+            <div className="z-10 order-1 flex justify-center  p-10  drop-shadow-2xl md:order-2 ">
+              <Image
+                src="/profilep.png"
+                alt="Profile Picture"
+                className="rounded-full  "
+                width={250}
+                height={250}
+                priority
+              />
+            </div>
 
-          <div className=" order-2 flex justify-center md:order-1">
-            <div className=" z-30 max-w-md p-5 ">
-              <h1 className="p-3 text-center text-7xl font-extrabold text-black/90 ">
-                Full-Stack Developer
-              </h1>
-              <p className="p-5 text-center text-xl text-black/90 ">
-                Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer based
-                in Turkey.
-              </p>
-              <div className="flex  justify-center ">
-                <Image
-                  src="/icons8-javascript.svg"
-                  alt="ts"
-                  className=" m-3 rounded-md hover:scale-125 hover:bg-yellow hover:shadow-lg transition duration-700 ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/icons8-typescript.svg"
-                  alt="ts"
-                  className=" m-3 rounded-md transition duration-700 ease-in-out  hover:scale-125 hover:bg-blue hover:shadow-lg "
-                  width={50}
-                  height={50}
-                  priority
-                />
+            <div className=" order-2 flex justify-center md:order-1">
+              <div className=" z-30  max-w-md ">
+                <h1 className="p-10 text-center text-7xl font-bold text-black ">
+                  Full-Stack Developer
+                </h1>
+                <div className="bg-white/75  shadow-xl rounded-xl">
+                <p className="p-5 text-center text-xl text-black ">
+                  Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer
+                  based in Turkey.
+                </p>
+                <div className="flex  justify-center ">
+                  <Image
+                    src="/icons8-javascript.svg"
+                    alt="ts"
+                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg"
+                    width={50}
+                    height={50}
+                    priority
+                  />
+                  <Image
+                    src="/icons8-typescript.svg"
+                    alt="ts"
+                    className="  m-3 rounded-md transition duration-700 ease-in-out  hover:scale-125 hover:bg-blue hover:shadow-lg "
+                    width={50}
+                    height={50}
+                    priority
+                  />
 
-                <Image
-                  src="/icons8-react.svg"
-                  alt="ts"
-                  className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-greenish hover:shadow-lg "
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/next-js.svg"
-                  alt="ts"
-                  className="m-3 rounded-md p-1  hover:scale-125 hover:bg-green hover:shadow-lg transition duration-700 ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/icons8-python.svg"
-                  alt="ts"
-                  className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg "
-                  width={50}
-                  height={50}
-                  priority
-                />
+                  <Image
+                    src="/icons8-react.svg"
+                    alt="ts"
+                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-greenish hover:shadow-lg "
+                    width={50}
+                    height={50}
+                    priority
+                  />
+                  <Image
+                    src="/next-js.svg"
+                    alt="ts"
+                    className="  m-3 rounded-md p-1  transition duration-700 ease-in-out hover:scale-125 hover:bg-green hover:shadow-lg"
+                    width={50}
+                    height={50}
+                    priority
+                  />
+                  <Image
+                    src="/icons8-python.svg"
+                    alt="ts"
+                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg "
+                    width={50}
+                    height={50}
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-</section>
+          </div>
+        </section>
+
 
         <div className=" items-center  justify-center  pt-96   md:flex">
           <div className=" order-2 flex justify-center md:order-1">
-            <div className=" z-30  p-5 max-w-2xl">
-            <section id="two" className="pb-20" />
+            <div className=" z-30  max-w-2xl p-5">
+              <section id="About" className="pb-20" />
 
-              <h1 className="p-5 text-center text-7xl font-extrabold text-black/90">
+              <h1 className="p-10 text-center text-7xl font-bold text-black">
                 About Me
               </h1>
 
-              <div className="shadow-inner  rounded-xl">
-                <p className="p-3 text-xl text-black/90">
+              <div className="rounded-2xl  bg-white/75 shadow-xl">
+                <p className="p-3 text-xl text-black">
                   Hello, I am a full-stack developer who loves to use AI assist
-                  tools to create innovative and dynamic applications. I
-                  have a passion for coding and learning new technologies, and I
-                  enjoy solving complex problems with elegant solutions.
+                  tools to create innovative and dynamic applications. I have a
+                  passion for coding and learning new technologies, and I enjoy
+                  solving complex problems with elegant solutions.
                 </p>
-                <p className="p-3 text-xl text-black/90">
+                <p className="p-3 text-xl text-black">
                   I started my journey as a developer when I learned how to
                   write “Hello world!” type of code. Since then, I have worked
                   on various projects that involved different languages,
@@ -209,7 +211,7 @@ export default function Home() {
                   project taught me how to use APIs, work with data, and design
                   user interfaces.
                 </p>
-                <p className="p-3 text-xl text-black/90">
+                <p className="p-3 text-xl text-black">
                   I also have a background in graphic design, which gives me an
                   edge in creating good looking and user-friendly interfaces. I
                   have experience in using tools like Photoshop, Illustrator,
@@ -217,7 +219,7 @@ export default function Home() {
                   I can also apply the principles of design, color theory,
                   typography, and layout to my web development projects.
                 </p>
-                <p className="p-3 text-xl text-black/90">
+                <p className="p-3 text-xl text-black">
                   I am always eager to learn new things and improve my skills. I
                   am currently working on a personal project that uses AI assist
                   tools to create a web app that can generate code from natural
@@ -228,146 +230,100 @@ export default function Home() {
                   world. I am open to collaborating with other developers,
                   designers, and clients who share my vision and values.
                 </p>
-
               </div>
             </div>
           </div>
         </div>
+
+
+
         <div className=" items-center  justify-center pt-96   md:flex">
-          <div className="z-10 order-1 flex justify-center  p-10  drop-shadow-2xl md:order-2 ">
-            <Image
-              src="/profilep.png"
-              alt="Profile Picture"
-              className="rounded-full  "
-              width={250}
-              height={250}
-              priority
-            />
-          </div>
 
           <div className=" order-2 flex justify-center md:order-1 ">
             <div className=" z-30 max-w-md p-5">
-              <h1 className="p-3 text-7xl font-extrabold text-black/90 ">
-                Full-Stack Developer
+            <section id="Projects" className="pb-44"/>
+
+              <h1 className="p-10 text-7xl   font-bold text-black ">
+                Projects
               </h1>
-              <p className="p-3 text-xl text-black/90">
-                Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer based
-                in Turkey.
-              </p>
-              <div className="flex ">
+
+              <a href="/influiq" className="font-bold text-black ">
+        
+              <div className="bg-white/75 transition duration-700 ease-in-out hover:shadow-2xl hover:scale-110 shadow-xl rounded-2xl flex">
                 <Image
-                  src="/icons8-javascript.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-yellow hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/icons8-typescript.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-blue hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
+                  src="/influiqlogo.png"
+                  alt="influiq"
+                  className=" m-5 rounded-2xl "
+                  width={120}
+                  height={120}
                   priority
                 />
 
-                <Image
-                  src="/icons8-react.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-greenish hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/next-js.svg"
-                  alt="ts"
-                  className="m-2 rounded-md p-1 transition-transform hover:scale-125 hover:bg-green hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/icons8-python.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-yellow hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
+                <div className="">
+                <h1 className="mt-5 ml-5 mb-2 text-4xl font-bold">
+influiq
+                </h1>
+                <p className="ml-5 font-medium text-black ">
+                  
+
+Influiq is an app that I developed for generating YouTube video content.
+
+                </p>
+                
+                </div>
+
               </div>
+              </a>
+
             </div>
           </div>
         </div>
 
-        <div className=" items-center  justify-center  pt-96   md:flex">
-          <div className="z-10 order-1 flex justify-center  p-10  drop-shadow-2xl md:order-2 ">
-            <Image
-              src="/profilep.png"
-              alt="Profile Picture"
-              className="rounded-full  "
-              width={250}
-              height={250}
-              priority
-            />
-          </div>
 
-          <div className=" order-2 flex justify-center md:order-1">
-            <div className=" z-30 max-w-md p-5">
-              <h1 className="p-3 text-7xl font-extrabold text-black/90 ">
-                Full-Stack Developer
-              </h1>
-              <p className="p-3 text-xl text-black/90">
-                Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer based
-                in Turkey.
-              </p>
-              <div className="flex ">
-                <Image
-                  src="/icons8-javascript.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-yellow hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
-                <Image
-                  src="/icons8-typescript.svg"
-                  alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-blue hover:shadow-lg hover:ease-in-out"
-                  width={50}
-                  height={50}
-                  priority
-                />
+        <div className=" items-center  justify-center  pt-96   flex">
+          
 
+
+              <div className=" z-30 max-w-md flex items-center shadow-xl rounded-xl bg-white/75 p-5  mb-16">
+                
+                <div className="">
                 <Image
-                  src="/icons8-react.svg"
+                  src="/icons8-github.svg"
                   alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-greenish hover:shadow-lg hover:ease-in-out"
+                  className=" mr-3 rounded-md  transition duration-700 ease-in-out hover:scale-125 hover:bg-purple hover:shadow-lg"
                   width={50}
                   height={50}
                   priority
                 />
+</div>
+<div className="">
                 <Image
-                  src="/next-js.svg"
+                  src="/icons8-instagram.svg"
                   alt="ts"
-                  className="m-2 rounded-md p-1 transition-transform hover:scale-125 hover:bg-green hover:shadow-lg hover:ease-in-out"
+                  className=" ml-6 mr-8 rounded-md p-1  transition duration-700 ease-in-out hover:scale-125 hover:bg-pink hover:shadow-lg"
                   width={50}
                   height={50}
                   priority
                 />
+</div>
+<div className="  h-14 rounded-md flex justify-center items-center  transition duration-700 ease-in-out hover:scale-110 hover:bg-blue hover:shadow-lg">
+        
                 <Image
-                  src="/icons8-python.svg"
+                  src="/email-svgrepo-com.svg"
                   alt="ts"
-                  className=" m-2 rounded-md transition-transform hover:scale-125 hover:bg-yellow hover:shadow-lg hover:ease-in-out"
+                  className=" ml-3"
                   width={50}
                   height={50}
                   priority
                 />
-              </div>
-            </div>
+        <p className="pl-2 pr-3 font-medium">
+                  alperd.dev@gmail.com
+                </p>
+                </div>
           </div>
         </div>
+        <section id="Contact" className=""/>
+
       </main>
     </>
   );

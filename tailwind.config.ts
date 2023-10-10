@@ -9,12 +9,16 @@ const config: Config = {
   theme: {
     colors: {
       black: "#000000",
+      blackL: "#1e1e1e",
+
       purple: "#C4AEF2",
       pink: "#F2C9C9",
       green: "#63F287",
       greenish: "#D3F263",
       yellow: "#F2EA72",
       white: "#FFFFFF",
+      whiteD: "#ebebeb",
+
       blue: "#A2C1FF",
     },
     extend: {
@@ -29,6 +33,10 @@ const config: Config = {
             boxShadow: "1px 1px 15px black",
           },
         },
+      },
+      boxShadow: {
+        "inner-lg":
+          "inset 0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 2px 10px 0 rgba(0, 0, 0, 0.1)",
       },
     },
   },
