@@ -2,7 +2,8 @@
 "use client";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
-
+import Link from "next/link";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { motion, useViewportScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -23,7 +24,7 @@ function Blob1() {
 
   return (
     <motion.div
-      className=" absolute  -z-20 rounded-full bg-purple/50 blur-[30px]"
+      className=" absolute  -z-20 rounded-full bg-purple blur-[30px]"
       style={{
         scale,
         width: 100,
@@ -42,19 +43,19 @@ function Blob2() {
   const { scrollYProgress } = useViewportScroll();
   const [scale, setScale] = useState(0);
   const [x, setX] = useState(0);
-
   useEffect(() => {
     return scrollYProgress.onChange((v) => {
-      let newScale1 = Math.max(0, (v - 0.1) * 130 - 15);
-      let newScale2 = Math.max(0, 60 - (v - 0.1) * 190);
-      let newScale = v > 0.35 ? newScale2 : newScale1;
+      const newScale1 = Math.max(0, Math.min((v - 0.1) * 100 - 15, 20));
+      const newScale2 = Math.max(0, Math.min(60 - (v - 0.45) * 350, 20));
+      const newScale = v > 0.45 ? newScale2 : newScale1;
       setScale(newScale);
-      setX(Math.max(-1000, (v - 0.1) * 7000 - 1600));
+      setX(Math.max(-1000, (v - 0.1) * 4000 - 1400));
     });
   }, [scrollYProgress]);
+
   return (
     <motion.div
-      className="left  absolute  -z-20  rounded-full   bg-yellow/50 blur-[20px] "
+      className="left absolute -z-20 rounded-full bg-yellow blur-[20px]"
       style={{
         scale,
         width: 100,
@@ -69,7 +70,6 @@ function Blob2() {
     />
   );
 }
-
 function Blob3() {
   const { scrollYProgress } = useViewportScroll();
   const [scale, setScale] = useState(0);
@@ -77,17 +77,17 @@ function Blob3() {
 
   useEffect(() => {
     return scrollYProgress.onChange((v) => {
-      let newScale1 = Math.max(0, (v - 0.5) * 130 - 15);
-      let newScale2 = Math.max(0, 60 - (v - 0.5) * 190);
-      let newScale = v > 0.75 ? newScale2 : newScale1;
+      const newScale1 = Math.max(0, Math.min((v - 0.55) * 100 - 15, 20));
+      const newScale2 = Math.max(0, Math.min(60 - (v - 0.8) * 350, 20));
+      const newScale = v > 0.8 ? newScale2 : newScale1;
       setScale(newScale);
-      setX(Math.max(-1000, (v - 0.5) * 7000 - 1600));
+      setX(Math.max(-1000, (v - 0.55) * 5000 - 1600));
     });
   }, [scrollYProgress]);
 
   return (
     <motion.div
-      className="left absolute  -z-20  rounded-full   bg-greenish/50 blur-[30px] "
+      className="left absolute  -z-20  rounded-full   bg-greenish blur-[30px] "
       style={{
         scale,
         width: 100,
@@ -104,6 +104,12 @@ function Blob3() {
 }
 
 export default function Home() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const onCopy = () => {
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000); // reset after 2s
+  };
   return (
     <>
       <Blob1 />
@@ -111,10 +117,10 @@ export default function Home() {
       <Blob3 />
       <Navbar />
 
-      <main className="scroll-smooth">
+      <main className="scale-90 scroll-smooth sm:scale-100">
         <section id="one" className="">
-          <div className=" items-center  justify-center  pt-32  md:flex   md:pt-36">
-            <div className="z-10 order-1 flex justify-center  p-10  drop-shadow-2xl md:order-2 ">
+          <div className=" items-center  justify-center  pt-0  sm:pt-24 md:flex  md:pt-44 ">
+            <div className="z-10 order-1 flex justify-center p-0 drop-shadow-2xl  sm:p-10 md:order-2 ">
               <Image
                 src="/profilep.png"
                 alt="Profile Picture"
@@ -130,60 +136,59 @@ export default function Home() {
                 <h1 className="p-10 text-center text-7xl font-bold text-black ">
                   Full-Stack Developer
                 </h1>
-                <div className="bg-white/75  shadow-xl rounded-xl">
-                <p className="p-5 text-center text-xl text-black ">
-                  Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer
-                  based in Turkey.
-                </p>
-                <div className="flex  justify-center ">
-                  <Image
-                    src="/icons8-javascript.svg"
-                    alt="ts"
-                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg"
-                    width={50}
-                    height={50}
-                    priority
-                  />
-                  <Image
-                    src="/icons8-typescript.svg"
-                    alt="ts"
-                    className="  m-3 rounded-md transition duration-700 ease-in-out  hover:scale-125 hover:bg-blue hover:shadow-lg "
-                    width={50}
-                    height={50}
-                    priority
-                  />
+                <div className="rounded-xl  bg-white/50 shadow-xl">
+                  <p className="p-5 text-center text-xl text-black ">
+                    Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer
+                    based in Turkey.
+                  </p>
+                  <div className="flex  justify-center ">
+                    <Image
+                      src="/icons8-javascript.svg"
+                      alt="ts"
+                      className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg"
+                      width={50}
+                      height={50}
+                      priority
+                    />
+                    <Image
+                      src="/icons8-typescript.svg"
+                      alt="ts"
+                      className="  m-3 rounded-md transition duration-700 ease-in-out  hover:scale-125 hover:bg-blue hover:shadow-lg "
+                      width={50}
+                      height={50}
+                      priority
+                    />
 
-                  <Image
-                    src="/icons8-react.svg"
-                    alt="ts"
-                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-greenish hover:shadow-lg "
-                    width={50}
-                    height={50}
-                    priority
-                  />
-                  <Image
-                    src="/next-js.svg"
-                    alt="ts"
-                    className="  m-3 rounded-md p-1  transition duration-700 ease-in-out hover:scale-125 hover:bg-green hover:shadow-lg"
-                    width={50}
-                    height={50}
-                    priority
-                  />
-                  <Image
-                    src="/icons8-python.svg"
-                    alt="ts"
-                    className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg "
-                    width={50}
-                    height={50}
-                    priority
-                  />
+                    <Image
+                      src="/icons8-react.svg"
+                      alt="ts"
+                      className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-greenish hover:shadow-lg "
+                      width={50}
+                      height={50}
+                      priority
+                    />
+                    <Image
+                      src="/next-js.svg"
+                      alt="ts"
+                      className="  m-3 rounded-md p-1  transition duration-700 ease-in-out hover:scale-125 hover:bg-green hover:shadow-lg"
+                      width={50}
+                      height={50}
+                      priority
+                    />
+                    <Image
+                      src="/icons8-python.svg"
+                      alt="ts"
+                      className=" m-3 rounded-md transition duration-700 ease-in-out hover:scale-125 hover:bg-yellow hover:shadow-lg "
+                      width={50}
+                      height={50}
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          </div>
         </section>
-
 
         <div className=" items-center  justify-center  pt-96   md:flex">
           <div className=" order-2 flex justify-center md:order-1">
@@ -194,7 +199,7 @@ export default function Home() {
                 About Me
               </h1>
 
-              <div className="rounded-2xl  bg-white/75 shadow-xl">
+              <div className="rounded-2xl  bg-white/50 shadow-xl">
                 <p className="p-3 text-xl text-black">
                   Hello, I am a full-stack developer who loves to use AI assist
                   tools to create innovative and dynamic applications. I have a
@@ -235,58 +240,53 @@ export default function Home() {
           </div>
         </div>
 
-
-
         <div className=" items-center  justify-center pt-96   md:flex">
-
           <div className=" order-2 flex justify-center md:order-1 ">
             <div className=" z-30 max-w-md p-5">
-            <section id="Projects" className="pb-44"/>
+              <section id="Projects" className="pb-20" />
 
               <h1 className="p-10 text-7xl   font-bold text-black ">
                 Projects
               </h1>
 
-              <a href="/influiq" className="font-bold text-black ">
-        
-              <div className="bg-white/75 transition duration-700 ease-in-out hover:shadow-2xl hover:scale-110 shadow-xl rounded-2xl flex">
-                <Image
-                  src="/influiqlogo.png"
-                  alt="influiq"
-                  className=" m-5 rounded-2xl "
-                  width={120}
-                  height={120}
-                  priority
-                />
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/alperddev/influiq"
+              >
+                <div className="flex rounded-2xl bg-white/50 shadow-xl transition duration-700 ease-in-out hover:scale-110 hover:shadow-2xl">
+                  <Image
+                    src="/influiqlogo.png"
+                    alt="influiq"
+                    className=" m-5 rounded-2xl "
+                    width={120}
+                    height={120}
+                    priority
+                  />
 
-                <div className="">
-                <h1 className="mt-5 ml-5 mb-2 text-4xl font-bold">
-influiq
-                </h1>
-                <p className="ml-5 font-medium text-black ">
-                  
-
-Influiq is an app that I developed for generating YouTube video content.
-
-                </p>
-                
+                  <div className="">
+                    <h1 className="mb-2 ml-5 mt-5 text-4xl font-bold">
+                      influiq
+                    </h1>
+                    <p className="ml-5 font-medium text-black ">
+                      Influiq is an app that I developed for generating YouTube
+                      video content.
+                    </p>
+                  </div>
                 </div>
-
-              </div>
-              </a>
-
+              </Link>
             </div>
           </div>
         </div>
 
-
-        <div className=" items-center  justify-center  pt-96   flex">
-          
-
-
-              <div className=" z-30 max-w-md flex items-center shadow-xl rounded-xl bg-white/75 p-5  mb-16">
-                
-                <div className="">
+        <div className=" flex  items-center  justify-center   pt-96">
+          <div className=" z-30 mb-16 flex max-w-md items-center rounded-xl bg-white/50 p-5  shadow-xl ">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/alperddev"
+            >
+              <div className="">
                 <Image
                   src="/icons8-github.svg"
                   alt="ts"
@@ -295,8 +295,14 @@ Influiq is an app that I developed for generating YouTube video content.
                   height={50}
                   priority
                 />
-</div>
-<div className="">
+              </div>
+            </Link>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.instagram.com/alperddev/"
+            >
+              <div className="">
                 <Image
                   src="/icons8-instagram.svg"
                   alt="ts"
@@ -305,25 +311,26 @@ Influiq is an app that I developed for generating YouTube video content.
                   height={50}
                   priority
                 />
-</div>
-<div className="  h-14 rounded-md flex justify-center items-center  transition duration-700 ease-in-out hover:scale-110 hover:bg-blue hover:shadow-lg">
-        
+              </div>
+            </Link>
+            <CopyToClipboard text="alperd.dev@gmail.com" onCopy={onCopy}>
+              <div className="flex h-14 items-center justify-center rounded-md transition duration-700 ease-in-out hover:scale-110 hover:bg-blue hover:shadow-lg">
                 <Image
                   src="/email-svgrepo-com.svg"
                   alt="ts"
-                  className=" ml-3"
+                  className="ml-3"
                   width={50}
                   height={50}
                   priority
                 />
-        <p className="pl-2 pr-3 font-medium">
-                  alperd.dev@gmail.com
+                <p className="pl-2 pr-3 font-medium">
+                  alperd.dev@gmail.com {isCopied ? "Copied!" : ""}
                 </p>
-                </div>
+              </div>
+            </CopyToClipboard>
           </div>
         </div>
-        <section id="Contact" className=""/>
-
+        <section id="Contact" className="" />
       </main>
     </>
   );
