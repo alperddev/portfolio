@@ -134,11 +134,11 @@ export default function Home() {
             <div className=" order-2 flex justify-center md:order-1">
               <div className=" z-30  max-w-md ">
                 <h1 className="p-10 text-center text-7xl font-bold text-black ">
-                  Full-Stack Developer
+                  Front-end Developer
                 </h1>
                 <div className="rounded-xl  bg-white/50 shadow-xl">
                   <p className="p-5 text-center text-xl text-black ">
-                    Hi, I'm Alper Dedeoglu. A passionate Full-Stack Developer
+                    Hi, I'm Alper Dedeoglu. A passionate Front-end Developer
                     based in Turkey.
                   </p>
                   <div className="flex  justify-center ">
@@ -201,7 +201,7 @@ export default function Home() {
 
               <div className="rounded-2xl  bg-white/50 shadow-xl">
                 <p className="p-3 text-xl text-black">
-                  Hello, I am a full-stack developer who loves to use AI assist
+                  Hello, I am a Front-end developer who loves to use AI assist
                   tools to create innovative and dynamic applications. I have a
                   passion for coding and learning new technologies, and I enjoy
                   solving complex problems with elegant solutions.
