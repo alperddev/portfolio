@@ -199,20 +199,42 @@ export default function Home() {
                 About Me
               </h1>
               <div className="rounded-2xl bg-white/50 shadow-xl">
-  <p className="p-3 text-xl text-black">
-    Hello, I am a Front-end developer who loves to use innovative tools to create dynamic applications. I have a passion for coding and learning new technologies, and I enjoy solving complex problems with elegant solutions.
-  </p>
-  <p className="p-3 text-xl text-black">
-    I started my journey as a developer when I learned how to write “Hello world!” type of code. Since then, I have worked on various projects that involved different languages, frameworks, and tools. One of my first projects was a social media content generator app that used an API to fetch relevant data and create engaging posts for different platforms. This project taught me how to use APIs, work with data, and design user interfaces.
-  </p>
-  <p className="p-3 text-xl text-black">
-    I also have a background in graphic design, which gives me an edge in creating good looking and user-friendly interfaces. I have experience in using tools like Photoshop, Illustrator, and Figma to create logos, icons, illustrations, and mockups. I can also apply the principles of design, color theory, typography, and layout to my web development projects.
-  </p>
-  <p className="p-3 text-xl text-black">
-    I am always eager to learn new things and improve my skills. I am currently working on a personal project that uses innovative tools to create a web app that can generate code from natural language. I am also interested in learning more about cloud computing, machine learning, and blockchain. I am looking for opportunities to work on challenging and exciting web development projects that can make a positive impact on the world. I am open to collaborating with other developers, designers, and clients who share my vision and values.
-  </p>
-</div>
-
+                <p className="p-3 text-xl text-black">
+                  Hello, I am a Front-end developer who loves to use innovative
+                  tools to create dynamic applications. I have a passion for
+                  coding and learning new technologies, and I enjoy solving
+                  complex problems with elegant solutions.
+                </p>
+                <p className="p-3 text-xl text-black">
+                  I started my journey as a developer when I learned how to
+                  write “Hello world!” type of code. Since then, I have worked
+                  on various projects that involved different languages,
+                  frameworks, and tools. One of my first projects was a social
+                  media content generator app that used an API to fetch relevant
+                  data and create engaging posts for different platforms. This
+                  project taught me how to use APIs, work with data, and design
+                  user interfaces.
+                </p>
+                <p className="p-3 text-xl text-black">
+                  I also have a background in graphic design, which gives me an
+                  edge in creating good looking and user-friendly interfaces. I
+                  have experience in using tools like Photoshop, Illustrator,
+                  and Figma to create logos, icons, illustrations, and mockups.
+                  I can also apply the principles of design, color theory,
+                  typography, and layout to my web development projects.
+                </p>
+                <p className="p-3 text-xl text-black">
+                  I am always eager to learn new things and improve my skills. I
+                  am currently working on a personal project that uses
+                  innovative tools to create a web app that can generate code
+                  from natural language. I am also interested in learning more
+                  about cloud computing, machine learning, and blockchain. I am
+                  looking for opportunities to work on challenging and exciting
+                  web development projects that can make a positive impact on
+                  the world. I am open to collaborating with other developers,
+                  designers, and clients who share my vision and values.
+                </p>
+              </div>
             </div>
           </div>
         </div>
